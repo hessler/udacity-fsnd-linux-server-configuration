@@ -19,13 +19,13 @@ Add new user named **grader** (password: _LetMeIn!_):
 adduser grader
 ```
 
-Grant sudo privileges by creating **grader** in `sudoers.d` (1), and adding appropriate permissions (2):
+Grant sudo privileges by creating **grader** in `sudoers.d`, and adding appropriate permissions:
 ```
 sudo nano /etc/sudoers.d/grader
 grader ALL=(ALL) NOPASSWD:ALL
 ```
 
-Add public key authentication by switching go new **grader** user (1), creating `authorized_keys` file in newly created `.ssh` directory (2-4) and pasting in contents of `udacity_key.rsa` into file, then restricting permissions on the `authorized_keys` (5):
+Add public key authentication by switching go new **grader** user, creating `authorized_keys` file in newly created `.ssh` directory and pasting in contents of `udacity_key.rsa` into file, then restricting permissions on the `authorized_keys`:
 ```
 su - grader
 mkdir .ssh
@@ -57,7 +57,7 @@ sudo reload ssh
 
 ### Uncomplicated Firewall (UFW) Configuration
 
-Set defaults to deny incoming and allow outgoing (1-2), allow ssh, www, and ntp (3-5), and enable and confirm UFW (6-7):
+Set defaults to deny incoming and allow outgoing, allow ssh, www, and ntp, and enable and confirm UFW:
 ```
 sudo ufw default deny incoming
 sudo ufw default allow outgoing
@@ -78,10 +78,10 @@ sudo apt-get install postgresql postgresql-contrib
 sudo apt-get install git
 ```
 
-Set global Git configuration items _(values below are placeholders for security)_:
+Set global Git configuration items:
 ```
-git config --global user.name "First Last"
-git config --global user.email "first.last@example.com"
+git config --global user.name "Anthony Hessler"
+git config --global user.email "anthony.hessler@covenanteyes.com"
 ```
 
 Add user **catalog**, create database, and revoke/grant appropriate access:
@@ -96,7 +96,7 @@ sudo service apache2 restart
 
 ### Set up & Serve Catalog App
 
-Add new directory for `catalog` (1-3) and create `.htaccess` file with contents (4):
+Add new directory for `catalog` and create `.htaccess` file with contents:
 ```
 cd /var/www/
 sudo mkdir catalog
@@ -104,7 +104,10 @@ cd catalog
 sudo nano .htaccess
 ```
 
-`.htaccess` contents: `RedirectMatch 404 /\.git`
+**.htaccess** contents: 
+```
+RedirectMatch 404 /\.git
+```
 
 Clone Catalog app into separate directory, then move contents over to newly created `catalog` directory. This is necessary due to the way in which the original Catalog app was set up and committed to GitHub. _(Note: The last line simply lists the contents of the `catalog` directory, as a way to confirm everything was copied over as intended.)_
 ```
