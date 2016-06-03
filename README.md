@@ -14,7 +14,7 @@ _Rather than list out all installed software and packages here, please refer to 
 ## Configuration Changes
 ### Add user _grader_ with sudo permissions
 
-Add new user named **grader**, with password and name _(not included for security)_:
+Add new user named **grader** (password: _LetMeIn!_):
 ```
 adduser grader
 ```
