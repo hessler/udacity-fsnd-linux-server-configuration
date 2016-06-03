@@ -118,7 +118,7 @@ cd catalog
 ls -al
 ```
 
->_Note: At this point, I had to make some miscellaneous updates to the Catalog App files, again due to how the app was originally set up vs. how it needed to be configured to work here. These included minor updates to the `__init__.py` file, the database files, and a few others._
+>_Note: At this point, I had to make some miscellaneous updates to the Catalog App files, again due to how the app was originally set up vs. how it needed to be configured to work here._
 
 Install necessary packages for the Catalog App:
 ```
