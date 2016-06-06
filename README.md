@@ -22,7 +22,7 @@ adduser grader
 Grant sudo privileges by creating **grader** in `sudoers.d`, and adding appropriate permissions:
 ```
 sudo nano /etc/sudoers.d/grader
-grader ALL=(ALL) NOPASSWD:ALL
+grader ALL=(ALL) NOPASSWD:SHUTDOWN_CMDS
 ```
 
 Add public key authentication by switching go new **grader** user, creating `authorized_keys` file in newly created `.ssh` directory and pasting in contents of `udacity_key.rsa` into file, then restricting permissions on the `authorized_keys`:
